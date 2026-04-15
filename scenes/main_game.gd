@@ -36,9 +36,12 @@ func load_level(level: int) -> void:
 		return
 
 	_level_container.add_child(game_level)
-	await game_level.ready
+	await _await_level_loading(game_level)
 	_game_ui.fade_out()
 
+func _await_level_loading(game_level: GameLevel) -> void:
+	while not game_level.is_node_ready():
+		await get_tree().create_timer(0.5).timeout
 
 func get_game_ui() -> GameUI:
 	return _game_ui
