@@ -12,6 +12,8 @@ height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4btnf"]
 albedo_color = Color(0.65073544, 0, 0.06406065, 1)
+emission_enabled = true
+emission = Color(0.92053044, 0.15366948, 0.2159496, 1)
 
 [node name="PressurePlate" type="Area3D" unique_id=1716667365]
 script = ExtResource("1_4btnf")

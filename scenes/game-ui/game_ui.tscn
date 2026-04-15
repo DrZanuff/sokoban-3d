@@ -94,3 +94,13 @@ color = Color(0, 0, 0, 1)
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_1bxfq")
 autoplay = &"idle"
+
+[node name="FPSLabel" type="Label" parent="." unique_id=1347068395]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_bottom = 33.0
+grow_horizontal = 0

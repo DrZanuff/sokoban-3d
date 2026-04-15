@@ -23,6 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1983486787]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
 mesh_library = ExtResource("3_fjwwo")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -64,3 +65,5 @@ environment = SubResource("Environment_yyoiw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1651236056]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 14, 4)
+light_color = Color(0.7708395, 0.77083945, 0.7708394, 1)
+shadow_enabled = true

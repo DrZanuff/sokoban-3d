@@ -11,10 +11,14 @@ bottom_radius = 0.4
 height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ivff"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+emission_enabled = true
+emission = Color(0.0768358, 0.07683582, 0.076835774, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c37cn"]
 albedo_color = Color(0.62503034, 0.4784208, 0, 1)
+emission_enabled = true
+emission = Color(0.49811888, 0.29190952, 0.056086875, 1)
 
 [node name="Goal" type="Area3D" unique_id=356629162]
 script = ExtResource("1_c37cn")
@@ -35,3 +39,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.1, 0.5)
 visible = false
 mesh = SubResource("CylinderMesh_r84s2")
 surface_material_override/0 = SubResource("StandardMaterial3D_c37cn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="EnabledMesh" unique_id=1871412765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6549549, 0)
+light_color = Color(0.99077827, 0.70208657, 0, 1)
+light_energy = 3.133
+shadow_enabled = true
+omni_range = 1.3740122

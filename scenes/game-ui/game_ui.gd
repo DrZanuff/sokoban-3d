@@ -7,3 +7,6 @@ func fade_in() -> void:
 
 func fade_out() -> void:
 	%AnimationPlayer.play("fade_out")
+
+func _process(_delta):
+	%FPSLabel.text = "FPS: %s" % Engine.get_frames_per_second()
