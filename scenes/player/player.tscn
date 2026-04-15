@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Script" uid="uid://spsi08nwlq4" path="res://scenes/player/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
+albedo_color = Color(0.2886184, 0.7653069, 0.99999994, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1519681950]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=26927332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0.5)
+shape = SubResource("CapsuleShape3D_u8vuu")
+
+[node name="Pivot" type="Marker3D" parent="." unique_id=1858674133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="Mesh" type="Marker3D" parent="Pivot" unique_id=1113734175]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Mesh" unique_id=637248166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_3vyb7")
+surface_material_override/0 = SubResource("StandardMaterial3D_u8vuu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot/Mesh" unique_id=475847378]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.5411296, 0.5740163)
+mesh = SubResource("BoxMesh_3vyb7")
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=1387103845]
+transform = Transform3D(-1, 0, -8.7422784e-08, -6.1817246e-08, 0.70710677, 0.7071068, 6.181724e-08, 0.7071068, -0.70710677, 0, 11.111517, -8.171293)
+
+[node name="Raycasts" type="Marker3D" parent="Pivot" unique_id=1273520001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="RayCastNorth" type="RayCast3D" parent="Pivot/Raycasts" unique_id=1396070800]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, 1)
+
+[node name="RayCastSouth" type="RayCast3D" parent="Pivot/Raycasts" unique_id=1566888816]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -1)
+
+[node name="RayCastWest" type="RayCast3D" parent="Pivot/Raycasts" unique_id=257809310]
+unique_name_in_owner = true
+target_position = Vector3(1, 0, 0)
+
+[node name="RayCastEast" type="RayCast3D" parent="Pivot/Raycasts" unique_id=414040877]
+unique_name_in_owner = true
+target_position = Vector3(-1, 0, 0)

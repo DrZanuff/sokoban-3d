@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dldwmgq8ww6gp"]
+
+[ext_resource type="Script" uid="uid://co3cqfkc5hxfw" path="res://scenes/box/box.gd" id="1_p2vi7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r66bm"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r66bm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2vi7"]
+albedo_color = Color(0.55311227, 0.27897593, 0, 1)
+
+[node name="Box" type="CharacterBody3D" unique_id=765616871]
+script = ExtResource("1_p2vi7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1479142037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+shape = SubResource("BoxShape3D_r66bm")
+
+[node name="Pivot" type="Marker3D" parent="." unique_id=19230578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="Mesh" type="Marker3D" parent="Pivot" unique_id=2066472926]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Mesh" unique_id=1235928920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_r66bm")
+surface_material_override/0 = SubResource("StandardMaterial3D_p2vi7")
+
+[node name="Raycasts" type="Marker3D" parent="Pivot" unique_id=510126753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RayCastNorth" type="RayCast3D" parent="Pivot/Raycasts" unique_id=1894113609]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, 1)
+
+[node name="RayCastSouth" type="RayCast3D" parent="Pivot/Raycasts" unique_id=428066015]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -1)
+
+[node name="RayCastWest" type="RayCast3D" parent="Pivot/Raycasts" unique_id=941858004]
+unique_name_in_owner = true
+target_position = Vector3(1, 0, 0)
+
+[node name="RayCastEast" type="RayCast3D" parent="Pivot/Raycasts" unique_id=1376077359]
+unique_name_in_owner = true
+target_position = Vector3(-1, 0, 0)

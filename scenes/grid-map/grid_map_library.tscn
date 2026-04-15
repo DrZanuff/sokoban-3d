@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ctgp1fqfv2mxn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1l5jr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awbxf"]
+albedo_color = Color(0.98406655, 0.43317893, 0.35818323, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sj7fu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wywkt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lunxx"]
+albedo_color = Color(0, 0.6439886, 0.39474192, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22cm4"]
+
+[node name="GridMapLibrary" type="Node3D" unique_id=201567285]
+
+[node name="BrickBlock1" type="MeshInstance3D" parent="." unique_id=174717803]
+mesh = SubResource("BoxMesh_1l5jr")
+surface_material_override/0 = SubResource("StandardMaterial3D_awbxf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BrickBlock1" unique_id=1541005351]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BrickBlock1/StaticBody3D" unique_id=1877048110]
+shape = SubResource("BoxShape3D_sj7fu")
+
+[node name="GroundBlock1" type="MeshInstance3D" parent="." unique_id=2005634060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_wywkt")
+surface_material_override/0 = SubResource("StandardMaterial3D_lunxx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GroundBlock1" unique_id=510618826]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundBlock1/StaticBody3D" unique_id=1780890714]
+shape = SubResource("BoxShape3D_22cm4")
