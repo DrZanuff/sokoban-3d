@@ -24,6 +24,7 @@ shape = SubResource("CapsuleShape3D_u8vuu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 
 [node name="Mesh" type="Marker3D" parent="Pivot" unique_id=1113734175]
+unique_name_in_owner = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Mesh" unique_id=637248166]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -35,10 +36,10 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.5411296, 0.5740163
 mesh = SubResource("BoxMesh_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=1387103845]
-transform = Transform3D(-1, -3.996803e-15, -8.742277e-08, -8.7417234e-08, -0.011257172, 0.99993664, -9.841372e-10, 0.99993664, 0.011257172, 9.536743e-07, 15.797838, -0.047255754)
+transform = Transform3D(-1, -3.996803e-15, -8.742277e-08, -8.7417234e-08, -0.011257172, 0.99993664, -9.841372e-10, 0.99993664, 0.011257172, 9.536743e-07, 9.045389, -0.022892237)
 
 [node name="Raycasts" type="Marker3D" parent="Pivot" unique_id=1273520001]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="RayCastNorth" type="RayCast3D" parent="Pivot/Raycasts" unique_id=1396070800]
 unique_name_in_owner = true

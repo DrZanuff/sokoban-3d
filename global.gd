@@ -1,6 +1,7 @@
 extends Node
 
 const MOVEMENT_FACTOR = 1.0 # in meters
+const MOVEMENT_SPEED = 5.0
 
 var _game_controller: MainGameController
 

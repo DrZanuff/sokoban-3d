@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dldwmgq8ww6gp"]
 
 [ext_resource type="Script" uid="uid://co3cqfkc5hxfw" path="res://scenes/box/box.gd" id="1_p2vi7"]
+[ext_resource type="Texture2D" uid="uid://pfjeks8vow01" path="res://assets/box/box-texture.png" id="2_mlok2"]
+[ext_resource type="Texture2D" uid="uid://deiwtvu0ytspv" path="res://assets/box/box-texture_ambient.png" id="3_n2vv6"]
+[ext_resource type="Texture2D" uid="uid://ysky5y0jaxfo" path="res://assets/box/box-texture_displacement.png" id="4_mv81w"]
+[ext_resource type="Texture2D" uid="uid://dveyqfmyx85fl" path="res://assets/box/box-texture_specular.png" id="5_uj5ov"]
+[ext_resource type="Texture2D" uid="uid://bvsuq0vyx5ne2" path="res://assets/box/box-texture-normal.png" id="6_c7buf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r66bm"]
 size = Vector3(0.9, 0.9, 0.9)
@@ -8,7 +13,20 @@ size = Vector3(0.9, 0.9, 0.9)
 [sub_resource type="BoxMesh" id="BoxMesh_r66bm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2vi7"]
-albedo_color = Color(0.55311227, 0.27897593, 0, 1)
+albedo_color = Color(0.90359825, 0.90359825, 0.9035982, 1)
+albedo_texture = ExtResource("2_mlok2")
+metallic = 0.2
+metallic_specular = 0.21
+metallic_texture = ExtResource("5_uj5ov")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("6_c7buf")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("3_n2vv6")
+heightmap_texture = ExtResource("4_mv81w")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
 
 [node name="Box" type="CharacterBody3D" unique_id=765616871]
 script = ExtResource("1_p2vi7")
