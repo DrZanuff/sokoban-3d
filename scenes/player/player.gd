@@ -3,6 +3,8 @@ extends CharacterBody3D
 class_name Player
 
 var _is_moving: bool = false
+var _input_enabled: bool = true
+var _is_level_complete_sequence_running: bool = false
 const ROTATION_LERP_SPEED := 12.0
 const PUSH_MIN_DELAY := 0.2
 var _target_mesh_yaw: float = 0.0
@@ -25,6 +27,9 @@ func _process(delta: float) -> void:
 	)
 
 func _physics_process(_delta: float) -> void:
+	if not _input_enabled:
+		return
+
 	if _is_moving:
 		return
 
@@ -106,3 +111,20 @@ func _move(direction: Vector3) -> void:
 
 func _face_direction(direction: Vector3) -> void:
 	_target_mesh_yaw = atan2(direction.x, direction.z)
+
+func on_goal_reached() -> void:
+	if _is_level_complete_sequence_running:
+		return
+
+	_input_enabled = false
+	_is_level_complete_sequence_running = true
+
+	while _is_moving:
+		await get_tree().process_frame
+
+	%AnimationPlayer.play("emote-yes")
+	await %AnimationPlayer.animation_finished
+
+	var game_controller: MainGameController = Global.get_game_controller()
+	if game_controller != null:
+		game_controller.load_next_level_if_available()
