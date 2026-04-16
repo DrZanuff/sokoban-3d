@@ -10,5 +10,3 @@ var _is_moving: bool = false
 @onready var _raycast_east: RayCast3D = %RayCastEast
 
 @onready var _player_mesh: Marker3D = %Mesh
-
-
