@@ -29,23 +29,5 @@ func add_plate(plate: PressurePlate) -> void:
 	_plate_list.push_back(plate)
 	_plate_map[path] = plate
 
-func check_completion() -> void:
-	if _plate_list.is_empty():
-		_activate_all_goals(false)
-		return
-
-	var active_count: int = 0
-	for plate in _plate_list:
-		if plate.get_is_active():
-			active_count += 1
-
-	var is_complete := active_count == _plate_list.size()
-	_activate_all_goals(is_complete)
-
-func _activate_all_goals(state: bool) -> void:
-	for goal in _goal_list:
-		goal.set_state(state)
-
 func _ready() -> void:
-	check_completion()
 	ready.emit()
