@@ -15,6 +15,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if not (body is Box):
 		return
 
+	var box: Box = body as Box
+	box.on_pressure_plate_entered()
 	_is_active = true
 	_notify_level()
 
@@ -22,6 +24,8 @@ func _on_body_exited(body: Node3D) -> void:
 	if not (body is Box):
 		return
 
+	var box: Box = body as Box
+	box.on_pressure_plate_exited()
 	_is_active = false
 	_notify_level()
 

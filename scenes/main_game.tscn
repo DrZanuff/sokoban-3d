@@ -4,10 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://c17gdhc2qbb6k" path="res://scenes/game-ui/game_ui.tscn" id="2_72e8q"]
 [ext_resource type="PackedScene" uid="uid://blhe8bqcevjx7" path="res://scenes/game-level/game_level.tscn" id="2_d2op2"]
 [ext_resource type="PackedScene" uid="uid://tlsney2e5ytr" path="res://scenes/game-level/levels/level_1.tscn" id="3_0rdsr"]
+[ext_resource type="PackedScene" uid="uid://bkl5u5qjyyivt" path="res://scenes/game-level/levels/level_2.tscn" id="4_ygxny"]
+[ext_resource type="PackedScene" uid="uid://b2hpw4lmlicci" path="res://scenes/game-level/levels/level_3.tscn" id="5_wi4c7"]
+[ext_resource type="PackedScene" uid="uid://0j2i4epr53lv" path="res://scenes/game-level/levels/level_4.tscn" id="6_wi4c7"]
+[ext_resource type="PackedScene" uid="uid://cs6ehv2o4o8nf" path="res://scenes/game-level/levels/level_5.tscn" id="7_70vka"]
 
 [node name="MainGame" type="Node3D" unique_id=1388777773]
 script = ExtResource("1_s3esy")
-_levels = Array[PackedScene]([ExtResource("2_d2op2"), ExtResource("3_0rdsr")])
+_levels = Array[PackedScene]([ExtResource("2_d2op2"), ExtResource("3_0rdsr"), ExtResource("4_ygxny"), ExtResource("5_wi4c7"), ExtResource("6_wi4c7"), ExtResource("7_70vka")])
+_current_level = 5
 
 [node name="GameUI" parent="." unique_id=931292142 instance=ExtResource("2_72e8q")]
 unique_name_in_owner = true
