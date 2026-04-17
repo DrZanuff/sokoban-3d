@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+  fill="none"
+  stroke="none"
+  width="20"
+  height="20"
+  stroke-width="1">
+
+  <defs>
+    <pattern id="noise" width="7" height="4"
+              patternUnits="userSpaceOnUse">
+      <g fill="rgba(255,255,255,.2)">
+        <rect x="0" y="0" width="1" height="1"></rect>
+        <rect x="4" y="1" width="1" height="1"></rect>
+        <rect x="2" y="2" width="1" height="1"></rect>
+        <rect x="6" y="3" width="1" height="1"></rect>
+      </g>
+      <g fill="rgba(0,0,0,.2)">
+        <rect x="3" y="0" width="1" height="1"></rect>
+        <rect x="6" y="1" width="1" height="1"></rect>
+        <rect x="4" y="2" width="1" height="1"></rect>
+        <rect x="6" y="3" width="1" height="1"></rect>
+      </g>
+    </pattern>
+  </defs>
+
+  <rect x="0" y="0" width="20" height="20" fill="#999"></rect>
+  <g id="b">
+    <rect x="0" y="0" width="9" height="4" fill="#800"></rect>
+    <path d="M0.5,3 L0.5,0.5 L8,0.5" stroke="rgba(255,255,255,.4)" />
+    <path d="M1,3.5 L8.5,3.5 L8.5,0.5" stroke="rgba(0,0,0,.4)" />
+  </g>
+  <use xlink:href="#b" y="0" x="10" />
+  <use xlink:href="#b" y="5" x="-5" />
+  <use xlink:href="#b" y="5" x="5"  />
+  <use xlink:href="#b" y="5" x="15" />
+  <use xlink:href="#b" y="10" x="0" />
+  <use xlink:href="#b" y="10" x="10" />
+  <use xlink:href="#b" y="15" x="-5" />
+  <use xlink:href="#b" y="15" x="5"  />
+  <use xlink:href="#b" y="15" x="15" />
+
+  <rect x="0" y="0" width="20" height="20" fill="url(#noise)"></rect>
+
+</svg>

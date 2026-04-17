@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  stroke="none"
+  width="20"
+  height="20"
+  stroke-width="1"
+  >
+
+  <circle fill="red" cx="10" cy="10" r="4" fill-opacity="0.4"></circle>
+
+</svg>

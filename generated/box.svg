@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  stroke="none"
+  width="20"
+  height="20"
+  stroke-width="1">
+
+  <rect x="2" y="2" width="16" height="16" fill="#ffa838"></rect>
+
+  <g transform="translate(0.5,0.5)" stroke="#ab8347">
+    <path d="M3,16 L3,3 L16,3" /> <!-- top-left -->
+    <path d="M3,17 L17,17 L17,3" /> <!-- bottom-right -->
+    <path d="M5,15 L5,5 L15,5" /> <!-- inner: top-left -->
+    <path d="M10.5,9.5 L14.5,5.5" />
+    <path d="M4.5,5.5 L8.5,9.5" />
+    <path d="M5,15 L9.5,10.5 L14,15" />
+  </g>
+
+  <g transform="translate(0.5,0.5)" stroke="black">
+    <path d="M1,1 L18,1 L18,18 L1,18 z" /> <!-- outer -->
+    <path d="M4,4 L15,4 L15,15 L4,15 z" /> <!-- inner -->
+    <path d="M6,4 L9.5,7.5 L13,4" /> <!-- top -->
+    <path d="M4,6 L7.5,9.5 L4,13" /> <!-- left -->
+    <path d="M6,15 L9.5,11.5 L13,15" /> <!-- bottom -->
+    <path d="M15,6 L11.5,9.5 L15,13" /> <!-- left -->
+  </g>
+
+</svg>
