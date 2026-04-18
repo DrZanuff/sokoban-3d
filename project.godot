@@ -13,7 +13,7 @@ config_version=5
 config/name="Sokobam 3D"
 run/main_scene="uid://cck7h48uou84v"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bd5nvbvbcw5tv"
 
 [autoload]
 
@@ -22,6 +22,11 @@ Global="*uid://c2njt77l4jl2f"
 [display]
 
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom="uid://mbsg4xqnedxi"
+theme/custom_font="uid://c82c57ujbyqsq"
 
 [physics]
 

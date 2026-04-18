@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://cdaut0i0ql5nk"]
+
+[ext_resource type="Script" uid="uid://leh8gce814n4" path="res://scenes/game-level/game_level.gd" id="1_a53dx"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player/player.tscn" id="2_3ngyp"]
+[ext_resource type="MeshLibrary" uid="uid://b38dwrtp82e5m" path="res://scenes/grid-map/mesh_library.tres" id="3_imqhd"]
+[ext_resource type="PackedScene" uid="uid://dldwmgq8ww6gp" path="res://scenes/box/Box.tscn" id="4_sgpcs"]
+[ext_resource type="PackedScene" uid="uid://bsi58g8gi07ib" path="res://scenes/pressure-plate/pressure_plate.tscn" id="5_24r1b"]
+[ext_resource type="PackedScene" uid="uid://cctmr66sccguo" path="res://scenes/goal/goal.tscn" id="6_66xpx"]
+[ext_resource type="Script" uid="uid://cxve54i314l33" path="res://scripts/camera_idle.gd" id="7_3ngyp"]
+
+[sub_resource type="Environment" id="Environment_yyoiw"]
+background_mode = 1
+background_color = Color(0, 0.3597207, 0.5419795, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+
+[node name="GameLevel2" type="Node3D" unique_id=1755343728]
+script = ExtResource("1_a53dx")
+
+[node name="Player" parent="." unique_id=1519681950 instance=ExtResource("2_3ngyp")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+_input_enabled = false
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1983486787]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
+mesh_library = ExtResource("3_imqhd")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-65536, 65535, 1, -65537, 65535, 1, -131072, 65535, 1, -131071, 65535, 1, -196606, 65535, 1, -196607, 65535, 1, -196608, 65534, 1, -196608, 65535, 1, -131073, 65535, 1, -131074, 65535, 1, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -131074, 65534, 1, -131073, 65534, 1, -196607, 65534, 1, -196606, 65534, 1, -196605, 0, 1, -196605, 65535, 1, -196605, 65534, 1, -196605, 65533, 1, -196606, 65533, 1, -196607, 65533, 1, -196608, 65533, 1, -131073, 65533, 1, -131074, 65533, 1, -131075, 65533, 1, -131075, 65534, 1, -131075, 65535, 1, -131075, 0, 1, -131075, 1, 1, -131074, 1, 1, -131073, 1, 1, -196608, 1, 1, -196607, 1, 1, -196606, 1, 1, -196605, 1, 1, -65539, 65533, 0, -65538, 65533, 0, -65537, 65533, 0, -131072, 65533, 0, -131071, 65533, 0, -131070, 65533, 0, -131069, 65533, 0, -131069, 65534, 0, -131069, 65535, 0, -131069, 0, 0, -131069, 1, 0, -65539, 65534, 0, -65539, 65535, 0, -65539, 0, 0, -65539, 1, 0, -2, 65533, 0, -1, 65533, 0, -65536, 65533, 0, -65535, 65533, 0, -65534, 65533, 0, -3, 65533, 0, -65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, -196612, 2, 1, -196611, 2, 1, -196610, 2, 1, -196609, 2, 1, -262144, 2, 1, -262143, 3, 1, -262142, 3, 1, -262141, 3, 1, -262140, 3, 1, -262140, 2, 1, -262141, 2, 1, -262142, 2, 1, -262143, 1, 1, -262144, 1, 1, -262143, 2, 1, -262144, 3, 1, -196609, 3, 1, -196610, 3, 1, -196612, 3, 1, -196613, 3, 1, -196611, 3, 1, -196613, 2, 1, -262139, 2, 1, -262139, 3, 1, -262140, 1, 1, -262140, 0, 1, -262140, 65535, 1, -262140, 65534, 1, -262141, 65534, 1, -262140, 65533, 1, -262139, 65534, 1, -262139, 65535, 1, -262139, 0, 1, -262139, 1, 1, -262139, 65533, 1, -196612, 1, 1, -196612, 0, 1, -196612, 65535, 1, -196612, 65534, 1, -196612, 65533, 1, -196613, 65533, 1, -196613, 65534, 1, -196613, 65535, 1, -196613, 0, 1, -196613, 1, 1, -262141, 65532, 1, -262142, 65532, 1, -262143, 65532, 1, -262144, 65532, 1, -196609, 65532, 1, -196610, 65532, 1, -196611, 65532, 1, -196612, 65532, 1, -196613, 65532, 1, -262140, 65531, 1, -262140, 65532, 1, -262139, 65532, 1, -262139, 65531, 1, -262139, 65530, 1, -262139, 65529, 1, -262139, 65528, 1, -262140, 65528, 1, -262141, 65528, 1, -262142, 65528, 1, -262143, 65528, 1, -262143, 65527, 1, -262144, 65527, 1, -196609, 65527, 1, -196610, 65527, 1, -196611, 65528, 1, -196612, 65528, 1, -196612, 65529, 1, -196612, 65530, 1, -196613, 65530, 1, -196613, 65531, 1, -196612, 65531, 1, -196611, 65531, 1, -196610, 65531, 1, -262143, 65531, 1, -262142, 65531, 1, -262141, 65531, 1, -262140, 65530, 1, -262140, 65529, 1, -262141, 65529, 1, -262142, 65529, 1, -262143, 65529, 1, -262144, 65529, 1, -196609, 65529, 1, -196609, 65528, 1, -262144, 65528, 1, -196610, 65528, 1, -196610, 65529, 1, -196611, 65529, 1, -196611, 65530, 1, -196609, 65531, 1, -262144, 65531, 1, -262142, 65530, 1, -262141, 65530, 1, -262143, 65530, 1, -196613, 65529, 1, -196613, 65528, 1, -196612, 65527, 1, -196611, 65527, 1, -196613, 65527, 1, -262142, 65527, 1, -262141, 65527, 1, -262140, 65527, 1, -262139, 65527, 1, -196610, 65530, 1, -196609, 65530, 1, -262144, 65530, 1)
+}
+metadata/_editor_floor_ = Vector3(0, -2, 0)
+
+[node name="Objects" type="Marker3D" parent="." unique_id=347418887]
+
+[node name="Box" type="Marker3D" parent="Objects" unique_id=873228006]
+
+[node name="Box1" parent="Objects/Box" unique_id=765616871 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.5343163, -2)
+
+[node name="Box4" parent="Objects/Box" unique_id=1749265018 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.53431636, -2)
+
+[node name="Box9" parent="Objects/Box" unique_id=1261738052 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -5)
+
+[node name="Box10" parent="Objects/Box" unique_id=1028761180 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="Box11" parent="Objects/Box" unique_id=2096886428 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5)
+
+[node name="Box12" parent="Objects/Box" unique_id=1959659602 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -5)
+
+[node name="Box13" parent="Objects/Box" unique_id=1064454709 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -5)
+
+[node name="Box14" parent="Objects/Box" unique_id=2023863496 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Box15" parent="Objects/Box" unique_id=1596335235 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+
+[node name="Box17" parent="Objects/Box" unique_id=985180847 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -5)
+
+[node name="Box18" parent="Objects/Box" unique_id=515794660 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="Box19" parent="Objects/Box" unique_id=731955958 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -5)
+
+[node name="Box20" parent="Objects/Box" unique_id=1694092803 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -5)
+
+[node name="Box24" parent="Objects/Box" unique_id=254198190 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, -5)
+
+[node name="Box25" parent="Objects/Box" unique_id=1740440805 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="Box26" parent="Objects/Box" unique_id=1705606427 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
+
+[node name="Box27" parent="Objects/Box" unique_id=1311644932 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -5)
+
+[node name="Box21" parent="Objects/Box" unique_id=1843231496 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, -5)
+
+[node name="Box22" parent="Objects/Box" unique_id=1786124683 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -5)
+
+[node name="Box23" parent="Objects/Box" unique_id=218485205 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -5)
+
+[node name="Box5" parent="Objects/Box" unique_id=1832452510 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.46568364, -2)
+
+[node name="Box2" parent="Objects/Box" unique_id=1004316002 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+
+[node name="Box6" parent="Objects/Box" unique_id=1104171474 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.462609, -2)
+
+[node name="Box16" parent="Objects/Box" unique_id=984052310 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2.2503433, 2.0685973)
+
+[node name="Box28" parent="Objects/Box" unique_id=599209869 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9538183, -1.4935548, 0.9446881)
+
+[node name="Box7" parent="Objects/Box" unique_id=519117351 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.46260905, -2)
+
+[node name="Box8" parent="Objects/Box" unique_id=178815248 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Box3" parent="Objects/Box" unique_id=1031271643 instance=ExtResource("4_sgpcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -3)
+
+[node name="Plate" type="Marker3D" parent="Objects" unique_id=1970019612]
+
+[node name="PressurePlate2" parent="Objects/Plate" unique_id=32000555 instance=ExtResource("5_24r1b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -3)
+
+[node name="Goal" type="Marker3D" parent="Objects" unique_id=2034221336]
+
+[node name="Goal1" parent="Objects/Goal" unique_id=356629162 instance=ExtResource("6_66xpx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1672586704]
+environment = SubResource("Environment_yyoiw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1651236056]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 14, 4)
+light_color = Color(0.7708395, 0.77083945, 0.7708394, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2026536744]
+transform = Transform3D(1, 0, 0, 0, 0.9957328, 0.092283696, 0, -0.092283696, 0.9957328, 0.50959903, 1.2961671, 3.7351334)
+current = true
+script = ExtResource("7_3ngyp")
+lock_rotation_z = true
+
+[node name="WinUI" type="Control" parent="." unique_id=1999798591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WinUI" unique_id=1750417415]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -282.0
+offset_right = 206.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinUI/MarginContainer" unique_id=266121350]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WinUI/MarginContainer/VBoxContainer" unique_id=281729741]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 22
+text = "Congratulations! 
+You have completed the game!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="WinUI/MarginContainer/VBoxContainer" unique_id=272369707]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "PLAY AGAIN!"

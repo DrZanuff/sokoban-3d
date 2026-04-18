@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dwymh1prspqxl"]
+
+[ext_resource type="Script" uid="uid://leh8gce814n4" path="res://scenes/game-level/game_level.gd" id="1_o30kk"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player/player.tscn" id="2_cgirg"]
+[ext_resource type="MeshLibrary" uid="uid://b38dwrtp82e5m" path="res://scenes/grid-map/mesh_library.tres" id="3_0d821"]
+[ext_resource type="PackedScene" uid="uid://dldwmgq8ww6gp" path="res://scenes/box/Box.tscn" id="4_mi3a6"]
+[ext_resource type="PackedScene" uid="uid://bsi58g8gi07ib" path="res://scenes/pressure-plate/pressure_plate.tscn" id="5_fc44w"]
+[ext_resource type="PackedScene" uid="uid://cctmr66sccguo" path="res://scenes/goal/goal.tscn" id="6_mkr6j"]
+
+[sub_resource type="Environment" id="Environment_yyoiw"]
+background_mode = 1
+background_color = Color(0, 0.3597207, 0.5419795, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+
+[node name="GameLevel" type="Node3D" unique_id=1755343728]
+script = ExtResource("1_o30kk")
+
+[node name="Player" parent="." unique_id=1519681950 instance=ExtResource("2_cgirg")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1983486787]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
+mesh_library = ExtResource("3_0d821")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(-65536, 65535, 1, -65536, 0, 1, -65536, 65534, 1, -1, 65535, 1, -65535, 65535, 1, -65536, 1, 1, -2, 65535, 1, -65534, 65535, 1, -1, 65533, 1, -65536, 65533, 1, -65535, 65533, 1, -65534, 65533, 1, -2, 65533, 1, -2, 65534, 1, -2, 0, 1, -2, 1, 1, -1, 1, 1, -65535, 1, 1, -65534, 1, 1, -65534, 0, 1, -65533, 0, 1, -65533, 65535, 1, -65533, 65534, 1, -65533, 65533, 1, -65534, 65534, 1, -65535, 0, 1, -1, 0, 1, -1, 65534, 1, -65535, 65534, 1, 3, 65533, 0, 3, 65534, 0, 3, 65535, 0, 3, 0, 0, -65533, 1, 1, -65533, 65532, 1, -65534, 65532, 1, -65535, 65532, 1, -65536, 65532, 1, -1, 65532, 1, -2, 65532, 1, 3, 65532, 0, 2, 65532, 0, 1, 65532, 0, 0, 65532, 0, 65535, 65532, 0, 65534, 65532, 0, -3, 65532, 1, -3, 65533, 1, -3, 65534, 1, -3, 65535, 1, -3, 0, 1, -3, 1, 1, 65533, 65532, 0, 65533, 65533, 0, 65533, 65534, 0, 65533, 65535, 0, 65533, 0, 0, 65533, 1, 0, -65533, 2, 1, -65534, 2, 1, -65535, 2, 1, -65536, 2, 1, -1, 2, 1, -2, 2, 1, -3, 2, 1, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 3, 1, 0, 2, 65534, 0, 65534, 0, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Objects" type="Marker3D" parent="." unique_id=347418887]
+
+[node name="Box" type="Marker3D" parent="Objects" unique_id=873228006]
+
+[node name="Box1" parent="Objects/Box" unique_id=765616871 instance=ExtResource("4_mi3a6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Box4" parent="Objects/Box" unique_id=1693072248 instance=ExtResource("4_mi3a6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Box2" parent="Objects/Box" unique_id=1004316002 instance=ExtResource("4_mi3a6")]
+
+[node name="Box3" parent="Objects/Box" unique_id=1031271643 instance=ExtResource("4_mi3a6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Plate" type="Marker3D" parent="Objects" unique_id=1970019612]
+
+[node name="PressurePlate1" parent="Objects/Plate" unique_id=1716667365 instance=ExtResource("5_fc44w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="PressurePlate2" parent="Objects/Plate" unique_id=32000555 instance=ExtResource("5_fc44w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="PressurePlate4" parent="Objects/Plate" unique_id=915841920 instance=ExtResource("5_fc44w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="PressurePlate3" parent="Objects/Plate" unique_id=1881897788 instance=ExtResource("5_fc44w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Goal" type="Marker3D" parent="Objects" unique_id=2034221336]
+
+[node name="Goal1" parent="Objects/Goal" unique_id=356629162 instance=ExtResource("6_mkr6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1672586704]
+environment = SubResource("Environment_yyoiw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1651236056]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 14, 4)
+light_color = Color(0.7708395, 0.77083945, 0.7708394, 1)
+shadow_enabled = true

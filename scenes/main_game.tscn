@@ -8,11 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://b2hpw4lmlicci" path="res://scenes/game-level/levels/level_3.tscn" id="5_wi4c7"]
 [ext_resource type="PackedScene" uid="uid://0j2i4epr53lv" path="res://scenes/game-level/levels/level_4.tscn" id="6_wi4c7"]
 [ext_resource type="PackedScene" uid="uid://cs6ehv2o4o8nf" path="res://scenes/game-level/levels/level_5.tscn" id="7_70vka"]
+[ext_resource type="PackedScene" uid="uid://dwymh1prspqxl" path="res://scenes/game-level/levels/level_6.tscn" id="8_2l77h"]
+[ext_resource type="PackedScene" uid="uid://ykls20ayvhx0" path="res://scenes/game-level/levels/level_7.tscn" id="9_nqdth"]
+[ext_resource type="PackedScene" uid="uid://bejl8jn7v7g8l" path="res://scenes/game-level/levels/level_8.tscn" id="10_5cypo"]
+[ext_resource type="PackedScene" uid="uid://jopmb8avtgr" path="res://scenes/game-level/levels/level_9.tscn" id="11_o6v7o"]
+[ext_resource type="PackedScene" uid="uid://hv6bdg85gfn5" path="res://scenes/game-level/levels/level_10.tscn" id="12_wjob3"]
+[ext_resource type="PackedScene" uid="uid://cdaut0i0ql5nk" path="res://scenes/game-level/win.tscn" id="13_8xp80"]
 
 [node name="MainGame" type="Node3D" unique_id=1388777773]
 script = ExtResource("1_s3esy")
-_levels = Array[PackedScene]([ExtResource("2_d2op2"), ExtResource("3_0rdsr"), ExtResource("4_ygxny"), ExtResource("5_wi4c7"), ExtResource("6_wi4c7"), ExtResource("7_70vka")])
-_current_level = 5
+_levels = Array[PackedScene]([ExtResource("2_d2op2"), ExtResource("3_0rdsr"), ExtResource("4_ygxny"), ExtResource("5_wi4c7"), ExtResource("6_wi4c7"), ExtResource("7_70vka"), ExtResource("8_2l77h"), ExtResource("9_nqdth"), ExtResource("10_5cypo"), ExtResource("11_o6v7o"), ExtResource("12_wjob3"), ExtResource("13_8xp80")])
+_current_level = 10
 
 [node name="GameUI" parent="." unique_id=931292142 instance=ExtResource("2_72e8q")]
 unique_name_in_owner = true

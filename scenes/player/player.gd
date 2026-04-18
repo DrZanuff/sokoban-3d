@@ -3,7 +3,7 @@ extends CharacterBody3D
 class_name Player
 
 var _is_moving: bool = false
-var _input_enabled: bool = true
+@export var _input_enabled: bool = true
 var _is_level_complete_sequence_running: bool = false
 const ROTATION_LERP_SPEED := 12.0
 const PUSH_MIN_DELAY := 0.2
