@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdaut0i0ql5nk"]
 
-[ext_resource type="Script" uid="uid://leh8gce814n4" path="res://scenes/game-level/game_level.gd" id="1_a53dx"]
+[ext_resource type="Script" path="res://scenes/game-level/win.gd" id="1_a53dx"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player/player.tscn" id="2_3ngyp"]
 [ext_resource type="MeshLibrary" uid="uid://b38dwrtp82e5m" path="res://scenes/grid-map/mesh_library.tres" id="3_imqhd"]
 [ext_resource type="PackedScene" uid="uid://dldwmgq8ww6gp" path="res://scenes/box/Box.tscn" id="4_sgpcs"]
