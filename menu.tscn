@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dldwmgq8ww6gp" path="res://scenes/box/Box.tscn" id="2_ytr4m"]
 [ext_resource type="MeshLibrary" uid="uid://b38dwrtp82e5m" path="res://scenes/grid-map/mesh_library.tres" id="3_l48gv"]
 [ext_resource type="Script" uid="uid://cxve54i314l33" path="res://scripts/camera_idle.gd" id="4_ecwwl"]
+[ext_resource type="Script" uid="uid://dnnd2uvynm55s" path="res://scripts/menu.gd" id="5_r1a8a"]
 
 [sub_resource type="Environment" id="Environment_yyoiw"]
 background_mode = 1
@@ -30,6 +31,7 @@ uv1_triplanar = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_ecwwl"]
 
 [node name="Menu" type="Node3D" unique_id=140415754]
+script = ExtResource("5_r1a8a")
 
 [node name="Win" type="Node3D" parent="." unique_id=1755343728]
 
@@ -118,20 +120,35 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Win/WinUI/MarginContainer/VBoxContainer" unique_id=281729741]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 22
-text = "Congratulations! 
-You have completed the game!"
+theme_override_font_sizes/font_size = 38
+text = "SOKOBAN 3D"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Win/WinUI/MarginContainer/VBoxContainer" unique_id=272369707]
+[node name="MenuHint" type="Label" parent="Win/WinUI/MarginContainer/VBoxContainer" unique_id=1768539262]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9, 0.97, 1, 0.95)
+theme_override_font_sizes/font_size = 18
+text = "Arrow Keys: Select   Space: Confirm"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Win/WinUI/MarginContainer/VBoxContainer" unique_id=2039642755]
+layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "PLAY AGAIN!"
+text = "Play Game"
+
+[node name="OptionsButton" type="Button" parent="Win/WinUI/MarginContainer/VBoxContainer" unique_id=1870594066]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Win/WinUI/MarginContainer/VBoxContainer" unique_id=1997129326]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit"
 
 [node name="Glass" type="MeshInstance3D" parent="Win" unique_id=695136415]
 transform = Transform3D(5.3336835, 0, 0, 0, 1, 0, 0, 0, 4.544406, 0, 6.6908674, -4.376527)
