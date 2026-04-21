@@ -2,6 +2,8 @@ extends Node3D
 
 class_name MainGameController
 
+const MENU_SCENE_PATH := "res://menu.tscn"
+
 @export var _levels: Array[PackedScene]
 @export var _current_level: int = 0
 
@@ -22,7 +24,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _is_level_transition_locked:
 		return
 	if Input.is_action_pressed("ui_accept"):
+		AudioManager.play_restart()
 		restart_current_level()
+		return
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file(MENU_SCENE_PATH)
 
 func load_level(level: int) -> void:
 	if _is_loading_level:

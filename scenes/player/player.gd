@@ -99,6 +99,7 @@ func _try_move(direction: Vector3) -> void:
 
 func _move(direction: Vector3) -> void:
 	%AnimationPlayer.play("walk")
+	AudioManager.play_step()
 	_is_moving = true
 	var target: Vector3 = global_position + (direction * Global.MOVEMENT_FACTOR)
 	var duration: float = Global.MOVEMENT_FACTOR / Global.MOVEMENT_SPEED

@@ -9,6 +9,7 @@ var _is_returning_to_menu: bool = false
 
 func _ready() -> void:
 	super._ready()
+	_play_again_button.pressed.connect(AudioManager.play_click)
 	_play_again_button.pressed.connect(_return_to_menu)
 
 
@@ -19,9 +20,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed() or event.is_echo():
 		return
 
+	if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down") or event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
+		AudioManager.play_click()
+		return
+
 	if event is InputEventKey and event.keycode == KEY_SPACE:
-		_return_to_menu()
-		get_viewport().set_input_as_handled()
+		AudioManager.play_click()
+		_return_to_menu() 
 
 
 func _return_to_menu() -> void:

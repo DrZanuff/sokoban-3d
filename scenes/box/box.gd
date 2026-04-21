@@ -71,6 +71,7 @@ func push(direction: Vector3) -> void:
 	if _is_moving:
 		return
 
+	AudioManager.play_box_push()
 	_is_moving = true
 	var target: Vector3 = global_position + (direction * Global.MOVEMENT_FACTOR)
 	var duration: float = Global.MOVEMENT_FACTOR / Global.MOVEMENT_SPEED

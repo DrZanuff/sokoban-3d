@@ -11,16 +11,19 @@ config_version=5
 [application]
 
 config/name="Sokobam 3D"
-run/main_scene="uid://cck7h48uou84v"
+run/main_scene="uid://bsucwbf1fc3bb"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://bd5nvbvbcw5tv"
 
 [autoload]
 
 Global="*uid://c2njt77l4jl2f"
+AudioManager="*res://scenes/audio/audio_manager.tscn"
 
 [display]
 
+window/size/mode=2
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 
 [gui]
